@@ -1,0 +1,19 @@
+name: TWoNEconomy
+main: me.AxiusDevelopment.TWoNEconomy.Main
+author: AxiusDevelopment
+version: 2.0
+commands:
+ balance:
+    description: Show your balance.
+    aliases: [bal, money, cash]
+
+ economy:
+    description: Show your balance.
+    aliases: [eco, econ, setmoney]
+
+ pay:
+    description: Show your balance.
+    aliases: [givemoney]
+
+
+
