@@ -20,8 +20,7 @@ public class Main extends JavaPlugin {
 	
 	public void onEnable() {
 
-        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
-        econ = rsp.getProvider();
+        setupEconomy();
 		
 		this.data = new DataHandler(this);
 		this.config = new ConfigHandler(this);
