@@ -54,6 +54,7 @@ public class ConfigHandler {
 	    setMessage("balanceOthersPerm", "TWoNEconomy.balanceothers");
 	    setMessage("econPerm", "TWoNEconomy.economy");
 	    setMessage("defaultEmeralds", "10");
+	    setMessage("viewUpdate", "TWoNEconomy.viewUpdate");
 	  }
 	  
 	  public void updateVersion() {
