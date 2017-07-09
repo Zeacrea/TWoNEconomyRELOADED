@@ -13,7 +13,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.AxiusDevelopment.TWoNEconomy.Commands.CommandBalance;
 import me.AxiusDevelopment.TWoNEconomy.Commands.CommandEconomy;
 import me.AxiusDevelopment.TWoNEconomy.Commands.CommandPay;
-import me.AxiusDevelopment.TWoNEconomy.Commands.CommandPayCompleter;
 import me.AxiusDevelopment.TWoNEconomy.Events.JoinEvent;
 import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.ConfigHandler;
 import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.DataHandler;
@@ -64,11 +63,14 @@ public class TWoNEconomy extends JavaPlugin {
 	    getCommand("Balance").setExecutor(new CommandBalance(this));
 	    getCommand("Economy").setExecutor(new CommandEconomy(this));
 	    getCommand("Pay").setExecutor(new CommandPay(this));
-	    getCommand("Pay").setTabCompleter(new CommandPayCompleter());
 	    
-	    if(Double.parseDouble(getUpdate()) > Double.parseDouble(getDescription().getVersion())) {
-	    	System.out.print("[TWoNResourcePackHandler] Update found.");
+	    if(Double.parseDouble(getUpdate()) > Double.parseDouble(getDescription().getName())) {
+	    	System.out.print(String.format("[%s] update found!", getDescription().getVersion()));
 	    	this.getServer().getPluginManager().registerEvents(new JoinEvent(this, this.data), this);
+	    }
+	    else
+	    {
+	    	System.out.print(String.format("[%s] all up to date!", getDescription().getName()));
 	    }
 	    
 	}
@@ -87,7 +89,7 @@ public class TWoNEconomy extends JavaPlugin {
 	
 	public String getUpdate() {
 		String v = "";
-		System.out.print("[TWoNEconomy] Checking for updates...");
+		System.out.print(String.format("[%s] Checking for updates...", getDescription().getName()));
 		try {
             HttpURLConnection con = (HttpURLConnection) new URL(
                     "http://www.spigotmc.org/api/general.php").openConnection();
