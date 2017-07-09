@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNEconomy;
+package me.AxiusDevelopment.TWoNEconomy.YAMLHandlers;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,15 +8,15 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import me.AxiusDevelopment.TWoNEconomy.Main;
+import me.AxiusDevelopment.TWoNEconomy.TWoNEconomy;
 
 public class DataHandler {
 
-	Main plugin;
+	TWoNEconomy plugin;
 	public HashMap<String, Integer> balanceData;
 	ConfigHandler config;
 	
-	public DataHandler(Main instance) {
+	public DataHandler(TWoNEconomy instance) {
 		plugin = instance;
 		this.balanceData = new HashMap<String, Integer>();
 	}

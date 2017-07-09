@@ -1,7 +1,6 @@
-package me.AxiusDevelopment.TWoNEconomy;
+package me.AxiusDevelopment.TWoNEconomy.Commands;
 
 import java.util.HashMap;
-import java.util.UUID;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
@@ -9,6 +8,11 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import me.AxiusDevelopment.TWoNEconomy.TWoNEconomy;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.ConfigHandler;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.DataHandler;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.Messages;
 
 public class CommandPay
   implements CommandExecutor
@@ -19,10 +23,10 @@ public class CommandPay
   HashMap<String, String> config = new HashMap<String, String>();
   Messages m;
   HashMap<String, String> messages = new HashMap<String, String>();
-  Main plugin;
+  TWoNEconomy plugin;
   Economy eco;
   
-  public CommandPay(Main main) {
+  public CommandPay(TWoNEconomy main) {
     plugin = main;
     m = main.messages;
     messages = main.messageData;

@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNEconomy;
+package me.AxiusDevelopment.TWoNEconomy.Commands;
 
 import java.util.ArrayList;
 import java.util.List;

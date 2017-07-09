@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNEconomy;
+package me.AxiusDevelopment.TWoNEconomy.Commands;
 
 import java.util.HashMap;
 
@@ -8,18 +8,22 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import me.AxiusDevelopment.TWoNEconomy.TWoNEconomy;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.ConfigHandler;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.DataHandler;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.Messages;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.economy.Economy;
 
 public class CommandBalance implements CommandExecutor {
 
-	Main main;
+	TWoNEconomy main;
 	DataHandler data;
 	ConfigHandler config;
 	Messages messages;
 	Economy econ;
 	
-	public CommandBalance(Main main) {
+	public CommandBalance(TWoNEconomy main) {
 		this.main = main;
 		this.data = main.data;
 		this.config = main.config;

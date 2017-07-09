@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNEconomy;
+package me.AxiusDevelopment.TWoNEconomy.YAMLHandlers;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,12 +7,14 @@ import java.util.HashMap;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import me.AxiusDevelopment.TWoNEconomy.TWoNEconomy;
+
 public class Messages {
 	
-	Main plugin;
+	TWoNEconomy plugin;
 	public HashMap<String, String> messageData;
 	
-	public Messages(Main instance) {
+	public Messages(TWoNEconomy instance) {
 		plugin = instance;
 		this.messageData = new HashMap<String, String>();
 	}

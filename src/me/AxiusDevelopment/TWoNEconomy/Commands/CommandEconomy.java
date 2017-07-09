@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNEconomy;
+package me.AxiusDevelopment.TWoNEconomy.Commands;
 
 import java.util.HashMap;
 
@@ -8,6 +8,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import me.AxiusDevelopment.TWoNEconomy.TWoNEconomy;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.ConfigHandler;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.DataHandler;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.Messages;
 import net.md_5.bungee.api.ChatColor;
 
 public class CommandEconomy implements CommandExecutor {
@@ -18,9 +22,9 @@ public class CommandEconomy implements CommandExecutor {
 	HashMap<String, String> config = new HashMap<String, String>();
 	Messages m;
 	HashMap<String, String> messages = new HashMap<String, String>();
-	Main plugin;
+	TWoNEconomy plugin;
 	
-	public CommandEconomy(Main main) {
+	public CommandEconomy(TWoNEconomy main) {
 		this.plugin = main;
 		this.m = main.messages;
 		this.messages = main.messageData;

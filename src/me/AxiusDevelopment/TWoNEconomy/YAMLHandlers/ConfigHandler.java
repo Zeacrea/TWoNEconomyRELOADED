@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNEconomy;
+package me.AxiusDevelopment.TWoNEconomy.YAMLHandlers;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,15 +8,15 @@ import java.util.logging.Logger;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import me.AxiusDevelopment.TWoNEconomy.Main;
+import me.AxiusDevelopment.TWoNEconomy.TWoNEconomy;
 
 public class ConfigHandler {
 
-	Main plugin;
+	TWoNEconomy plugin;
 	public HashMap<String, String> messageData;
 	Logger log = Logger.getLogger("TWoNEconomy");
 	
-	public ConfigHandler(Main instance) {
+	public ConfigHandler(TWoNEconomy instance) {
 		plugin = instance;
 		this.messageData = new HashMap<String, String>();
 	}

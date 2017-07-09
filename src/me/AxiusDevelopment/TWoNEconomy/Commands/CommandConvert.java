@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNEconomy;
+package me.AxiusDevelopment.TWoNEconomy.Commands;
 
 import java.util.HashMap;
 
@@ -8,9 +8,14 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+import me.AxiusDevelopment.TWoNEconomy.TWoNEconomy;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.ConfigHandler;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.DataHandler;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.Messages;
+
 public class CommandConvert implements CommandExecutor {
 
-	Main main;
+	TWoNEconomy main;
 	DataHandler data;
 	ConfigHandler config;
 	Messages messages;
@@ -18,7 +23,7 @@ public class CommandConvert implements CommandExecutor {
 	HashMap<String, String> cfg = new HashMap<String, String>();
 	HashMap<String, Integer> dta = new HashMap<String, Integer>();
 	
-	public CommandConvert(Main main) {
+	public CommandConvert(TWoNEconomy main) {
 		this.main = main;
 		this.data = main.data;
 		this.config = main.config;

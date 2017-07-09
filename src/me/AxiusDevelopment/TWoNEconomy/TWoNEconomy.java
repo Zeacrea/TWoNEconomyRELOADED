@@ -9,14 +9,23 @@ import java.util.HashMap;
 
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import me.AxiusDevelopment.TWoNEconomy.Commands.CommandBalance;
+import me.AxiusDevelopment.TWoNEconomy.Commands.CommandEconomy;
+import me.AxiusDevelopment.TWoNEconomy.Commands.CommandPay;
+import me.AxiusDevelopment.TWoNEconomy.Commands.CommandPayCompleter;
+import me.AxiusDevelopment.TWoNEconomy.Events.JoinEvent;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.ConfigHandler;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.DataHandler;
+import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.Messages;
 import net.milkbowl.vault.economy.Economy;
 
-public class Main extends JavaPlugin {
+public class TWoNEconomy extends JavaPlugin {
 	
-	DataHandler data;
-	ConfigHandler config;
-	Messages messages;
-	Economy econ;
+	public DataHandler data;
+	public ConfigHandler config;
+	public Messages messages;
+	public Economy econ;
 
 	public HashMap<String, String> configData = new HashMap<String, String>();
 	public HashMap<String, String> messageData = new HashMap<String, String>();
