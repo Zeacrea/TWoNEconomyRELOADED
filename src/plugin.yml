@@ -1,5 +1,5 @@
 name: TWoNEconomy
-main: me.AxiusDevelopment.TWoNEconomy.Main
+main: me.AxiusDevelopment.TWoNEconomy.TWoNEconomy
 author: AxiusDevelopment
 version: 2.3
 commands:
