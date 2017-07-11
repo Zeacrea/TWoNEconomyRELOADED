@@ -14,6 +14,7 @@ import me.AxiusDevelopment.TWoNEconomy.Commands.CommandBalance;
 import me.AxiusDevelopment.TWoNEconomy.Commands.CommandEconomy;
 import me.AxiusDevelopment.TWoNEconomy.Commands.CommandPay;
 import me.AxiusDevelopment.TWoNEconomy.Events.JoinEvent;
+import me.AxiusDevelopment.TWoNEconomy.Events.showUpdates;
 import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.ConfigHandler;
 import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.DataHandler;
 import me.AxiusDevelopment.TWoNEconomy.YAMLHandlers.Messages;
@@ -25,6 +26,7 @@ public class TWoNEconomy extends JavaPlugin {
 	public ConfigHandler config;
 	public Messages messages;
 	public Economy econ;
+	public String resource = "43639";
 
 	public HashMap<String, String> configData = new HashMap<String, String>();
 	public HashMap<String, String> messageData = new HashMap<String, String>();
@@ -64,17 +66,14 @@ public class TWoNEconomy extends JavaPlugin {
 	    getCommand("Economy").setExecutor(new CommandEconomy(this));
 	    getCommand("Pay").setExecutor(new CommandPay(this));
 	    
-	    /*
-	     * Will be used at a later date
-	     * 
-	     * if(Double.parseDouble(getUpdate()) > Double.parseDouble(getDescription().getName())) {
+	    if(Double.parseDouble(getUpdate()) > Double.parseDouble(getDescription().getName())) {
 	    	System.out.print(String.format("[%s] update found!", getDescription().getVersion()));
-	    	this.getServer().getPluginManager().registerEvents(new JoinEvent(this, this.data), this);
+	    	this.getServer().getPluginManager().registerEvents(new showUpdates(this, this.data), this);
 	    }
 	    else
 	    {
 	    	System.out.print(String.format("[%s] all up to date!", getDescription().getName()));
-	    }*/
+	    }
 	    
 	}
 	
@@ -99,7 +98,7 @@ public class TWoNEconomy extends JavaPlugin {
             con.setDoOutput(true);
             con.setRequestMethod("POST");
             con.getOutputStream()
-                    .write(("key=98BE0FE67F88AB82B4C197FAF1DC3B69206EFDCC4D3B80FC83A00037510B99B4&resource=43639")
+                    .write(("key=98BE0FE67F88AB82B4C197FAF1DC3B69206EFDCC4D3B80FC83A00037510B99B4&resource=" + resource)
                             .getBytes("UTF-8"));
             String version = new BufferedReader(new InputStreamReader(
                     con.getInputStream())).readLine();
