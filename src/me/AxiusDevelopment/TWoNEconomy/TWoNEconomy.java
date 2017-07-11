@@ -64,14 +64,17 @@ public class TWoNEconomy extends JavaPlugin {
 	    getCommand("Economy").setExecutor(new CommandEconomy(this));
 	    getCommand("Pay").setExecutor(new CommandPay(this));
 	    
-	    if(Double.parseDouble(getUpdate()) > Double.parseDouble(getDescription().getName())) {
+	    /*
+	     * Will be used at a later date
+	     * 
+	     * if(Double.parseDouble(getUpdate()) > Double.parseDouble(getDescription().getName())) {
 	    	System.out.print(String.format("[%s] update found!", getDescription().getVersion()));
 	    	this.getServer().getPluginManager().registerEvents(new JoinEvent(this, this.data), this);
 	    }
 	    else
 	    {
 	    	System.out.print(String.format("[%s] all up to date!", getDescription().getName()));
-	    }
+	    }*/
 	    
 	}
 	
